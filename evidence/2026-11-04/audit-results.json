@@ -1,0 +1,98 @@
+[
+  {
+    "name": "R1 cancel twice restores stock twice",
+    "detail": {
+      "stock": 2,
+      "expected": 1
+    }
+  },
+  {
+    "name": "R2 stale payment resurrects cancelled booking after resale",
+    "detail": {
+      "A": "active",
+      "B": "active",
+      "lockOwner": "B"
+    }
+  },
+  {
+    "name": "R3 lost refund response retries using different payment ID",
+    "detail": {
+      "requests": [
+        "AR01652",
+        "AR01152"
+      ],
+      "acceptedFee": 10000,
+      "recordedFee": 5000
+    }
+  },
+  {
+    "name": "R4 verify can consume an unpaid coupon",
+    "detail": {
+      "ok": true,
+      "orderStatus": "pending",
+      "verifiedQty": 1
+    }
+  },
+  {
+    "name": "R5 verification ignores in-progress refund lock",
+    "detail": {
+      "qty": 1,
+      "verified": 1,
+      "refunded": 1,
+      "available": -1
+    }
+  },
+  {
+    "name": "R6 quote accepts nonexistent court and fractional hour",
+    "detail": {
+      "valid": true,
+      "court": 999,
+      "hour": 10.5
+    }
+  },
+  {
+    "name": "R7 forged payment event marks unpaid order paid",
+    "detail": {
+      "caller": "customer",
+      "status": "active",
+      "queriedWechat": false
+    }
+  },
+  {
+    "name": "R8 one-year phone purge leaves phone in order and profile",
+    "detail": {
+      "userPhone": "",
+      "orderPhone": "13800001234",
+      "nickname": "name"
+    }
+  },
+  {
+    "name": "R9 expired fixed-date coupon can still be looked up and verified",
+    "detail": {
+      "expiredDate": "2026-11-03",
+      "lookup": true,
+      "verified": true
+    }
+  },
+  {
+    "name": "R10 simultaneous checkouts create two pending orders for one user",
+    "detail": {
+      "successfulCheckouts": 2,
+      "pendingOrders": 2
+    }
+  },
+  {
+    "name": "R11 saving stale product form restores already sold stock",
+    "detail": {
+      "stockAfterSale": 9,
+      "stockAfterNameEdit": 10
+    }
+  },
+  {
+    "name": "R12 price change during checkout makes paid total differ from item total",
+    "detail": {
+      "orderTotal": 100,
+      "itemTotal": 200
+    }
+  }
+]

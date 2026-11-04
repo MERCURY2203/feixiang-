@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "path": "reports/2026-11-04/檢查報告.md",
+      "bytes": 18305,
+      "sha256": "90b4306953b798264f6f2aad818cb1b0adbe6add1b8f9c6819192a8221002ef6"
+    },
+    {
+      "path": "reports/2026-11-04/審查過程.md",
+      "bytes": 7293,
+      "sha256": "9c435eb206219c8cae98040b27ba0ee5f953dd26a72b4f8634ba2f8219a4c3b4"
+    },
+    {
+      "path": "evidence/2026-11-04/audit-results.json",
+      "bytes": 2064,
+      "sha256": "cec8cbc02b6e933f96a477f2521ed1496807f4cd40bcc20060f7d2b59d143916"
+    },
+    {
+      "path": "evidence/2026-11-04/audit.cjs",
+      "bytes": 10834,
+      "sha256": "ca5f5323001d0b94395d9d20eed8b53e87b196d1743481c73e3f763c1573e432"
+    },
+    {
+      "path": "evidence/2026-11-04/README.md",
+      "bytes": 970,
+      "sha256": "e3e1c0a2ede8be0da97a4d965be65e5fef7483163a4cf0062bc767b85e8b1211"
+    },
+    {
+      "path": "evidence/2026-11-04/reproduction.zip",
+      "bytes": 208784,
+      "sha256": "2c92e5bcb662b388cfbaa4f73b7ff76e2b9bfe25785e786292852e9fb6e29f96"
+    }
+  ],
+  "static_findings": 3,
+  "source_repository": "MERCURY2203/feixiang-booking",
+  "reproduced_cases": 12,
+  "source_commit": "75dbdf09dcabebc79baef412bc30578346d388fd",
+  "audit_date": "2026-11-04"
+}
