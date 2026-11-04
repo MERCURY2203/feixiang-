@@ -1,0 +1,42 @@
+✓ R1 同一張待支付訂單同時取消兩次，庫存只退回一次
+✓ R2 已取消的訂單晚到付款，不會復活、不會重複賣出，並全額退款
+✓ R2b 付款確認與別人下單同時發生，場地只屬於一個人
+refund unknown FX261110100000395566R01 Error: socket hang up
+    at Object.refund (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\tests\fake-cloud.js:352:13)
+    at async Object.refund (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\cloudfunctions\booking\lib\pay.js:74:15)
+    at async processRefund (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\cloudfunctions\booking\lib\orders.js:467:5)
+    at async Object.refundItems (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\cloudfunctions\booking\lib\orders.js:498:13)
+    at async exports.main (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\cloudfunctions\booking\index.js:496:19)
+    at async Object.fn (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\tests\run.js:141:19)
+    at async C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\tests\run.js:373:7
+✓ R3 退款回覆丟失後重試，用同一個退款單號，只退一次
+✓ R4 未付款訂單的券碼不能核銷
+Error: 可退张数不足
+    at tx (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\cloudfunctions\booking\lib\orders.js:58:19)
+    at async Object.refundItems (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\cloudfunctions\booking\lib\orders.js:497:15)
+    at async exports.main (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\cloudfunctions\booking\index.js:496:19)
+    at async Promise.all (index 0)
+    at async Object.fn (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\tests\run.js:166:18)
+    at async C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\tests\run.js:373:7 {
+  code: 'BAD_QTY',
+  business: true
+}
+✓ R5 退款與核銷同時進行，最多只有一個成功，張數不會變負
+✓ R6 不存在的場地、非整點時段不能報價或下單
+✓ R7 偽造的付款通知不能把未付款訂單變成已付款
+✓ R8 一年未訂場自動刪除：用戶、訂單、核銷記錄裡的手機號都刪除，頭像暱稱也刪除
+✓ R9 固定日期活動過期後不能查到或核銷，未使用張數自動退款並記為已過期
+✓ R10 同一客人同時結算兩次，只產生一張待支付訂單
+✓ R11 編輯商品時不會把編輯期間賣出的庫存加回來
+✓ R12 結算時老闆改價：訂單總額永遠等於卡片金額相加
+✓ 兩人同時訂同一格，只有一人成功
+✓ 到期前已付款但沒收到通知：定時任務查單後訂單成立
+✓ 5 分鐘不付款：定時任務關單並放出場地，別人可以訂
+✓ 已過期但未關單的佔用：別人下單時先查單再放出
+✓ 券碼不重複：撞號時自動換號
+✓ 管理端部分退款、合併退款後金額一致
+✓ 註銷帳號：核銷記錄的手機號一併刪除
+✓ 支付未配置時不會悄悄進入模擬支付
+
+21/21 通過（事務衝突自動重試 4 次）
+全部通過

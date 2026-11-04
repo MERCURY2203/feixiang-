@@ -1,0 +1,61 @@
+[
+  {
+    "name": "N1 late failed retry overwrites successful refund and double-counts ledger",
+    "detail": {
+      "actualRefund": 1000,
+      "orderLedger": 2000,
+      "itemLedger": 1000
+    }
+  },
+  {
+    "name": "N2 partial amount refund consumes sole coupon and prevents refunding remaining balance",
+    "detail": {
+      "paid": 5000,
+      "refunded": 1000,
+      "status": "refunded",
+      "remaining": 4000,
+      "retry": "该订单当前不能退款"
+    }
+  },
+  {
+    "name": "N3 repeated identical stock adjustment is applied twice",
+    "detail": {
+      "before": 10,
+      "requestedStock": 15,
+      "afterRetry": 20
+    }
+  },
+  {
+    "name": "N4 legacy pending order without itemIds is cancelled without releasing holds",
+    "detail": {
+      "status": "cancelled",
+      "courtStillLocked": true,
+      "stock": 9,
+      "expectedStock": 10
+    }
+  },
+  {
+    "name": "N5 legacy active order without itemIds is shown as fully refunded",
+    "detail": {
+      "status": "refunded",
+      "refundedFee": 0,
+      "actualRefund": 0
+    }
+  },
+  {
+    "name": "N6 legacy verification log without userId retains phone after purge",
+    "detail": {
+      "userPhone": "",
+      "legacyLogPhone": "13800001111"
+    }
+  },
+  {
+    "name": "N7 newly issued coupon can reuse a legacy active code",
+    "detail": {
+      "oldItem": "OLD_ITEM",
+      "newItem": "FX261110100000111111_1",
+      "duplicateCode": "111111",
+      "lookupItem": "FX261110100000111111_1"
+    }
+  }
+]

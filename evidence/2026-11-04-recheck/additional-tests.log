@@ -1,0 +1,14 @@
+refund unknown FX261110100000899643R01 Error: delayed network failure
+    at cloud.cloudPay.refund (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\tests\codex-recheck.js:19:81)
+    at async Object.refund (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\cloudfunctions\booking\lib\pay.js:74:15)
+    at async Object.processRefund (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\cloudfunctions\booking\lib\orders.js:467:5)
+    at async C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\tests\codex-recheck.js:20:217
+    at async test (C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\tests\codex-recheck.js:14:50)
+    at async C:\Users\Administrator\Documents\Codex\2026-11-04\wo\work\recheck\tests\codex-recheck.js:16:1
+REPRODUCED N1 late failed retry overwrites successful refund and double-counts ledger {"actualRefund":1000,"orderLedger":2000,"itemLedger":1000}
+REPRODUCED N2 partial amount refund consumes sole coupon and prevents refunding remaining balance {"paid":5000,"refunded":1000,"status":"refunded","remaining":4000,"retry":"该订单当前不能退款"}
+REPRODUCED N3 repeated identical stock adjustment is applied twice {"before":10,"requestedStock":15,"afterRetry":20}
+REPRODUCED N4 legacy pending order without itemIds is cancelled without releasing holds {"status":"cancelled","courtStillLocked":true,"stock":9,"expectedStock":10}
+REPRODUCED N5 legacy active order without itemIds is shown as fully refunded {"status":"refunded","refundedFee":0,"actualRefund":0}
+REPRODUCED N6 legacy verification log without userId retains phone after purge {"userPhone":"","legacyLogPhone":"13800001111"}
+REPRODUCED N7 newly issued coupon can reuse a legacy active code {"oldItem":"OLD_ITEM","newItem":"FX261110100000111111_1","duplicateCode":"111111","lookupItem":"FX261110100000111111_1"}
