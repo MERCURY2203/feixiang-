@@ -1,0 +1,70 @@
+[
+  {
+    "name": "B1 refund number reused after older concurrent refund fails",
+    "observed": {
+      "localRefundedFen": 10000,
+      "wechatRefundedFen": 5000,
+      "thirdCouponEnded": true,
+      "secondRefundRecordNowPointsTo": "FX261110100000862633_3",
+      "thirdItem": "FX261110100000862633_3"
+    }
+  },
+  {
+    "name": "B2 refund retry queue blocks later recoverable refund",
+    "observed": {
+      "timerRuns": 4,
+      "laterRefundAttempts": 0,
+      "laterRefund": "pending"
+    }
+  },
+  {
+    "name": "B3 first 50 expired cards block later automatic refund",
+    "observed": {
+      "timerRuns": 4,
+      "elapsedHours": 3,
+      "laterRefundAttempts": 0,
+      "laterCardActive": true
+    }
+  },
+  {
+    "name": "B4 product buyNow cannot recover from price change without leaving page",
+    "observed": {
+      "displayedFen": 5000,
+      "currentFen": 9000,
+      "repeatedAttempts": [
+        {
+          "expect": 5000,
+          "code": "PRICE_CHANGED"
+        },
+        {
+          "expect": 5000,
+          "code": "PRICE_CHANGED"
+        }
+      ]
+    }
+  },
+  {
+    "name": "B5 auto refresh issued after date selection cancels intended selection",
+    "observed": {
+      "requestedDate": "2026-11-12",
+      "autoRequestDate": "2026-11-11",
+      "finalDisplayedDate": "2026-11-11"
+    }
+  },
+  {
+    "name": "B6 pending payment retry survives page unload",
+    "observed": {
+      "requestsBeforeUnload": 1,
+      "requestsAfterUnload": 2,
+      "redirectAfterUnload": "/pages/order/result/index?id=O"
+    }
+  },
+  {
+    "name": "B7 delayed refund counted against request date instead of settlement date",
+    "observed": {
+      "acceptedOn": "2026-11-11",
+      "reportRefundOnNov10": 5000,
+      "reportRefundOnNov11": 0
+    }
+  }
+]
