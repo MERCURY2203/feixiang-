@@ -1,0 +1,82 @@
+[
+  {
+    "id": "F1 order id collision overwrites another user order",
+    "observed": {
+      "sameId": true,
+      "orders": 1,
+      "locks": 2,
+      "firstCustomerLostOrder": true
+    }
+  },
+  {
+    "id": "F2 simultaneous owner phone binding creates two owners",
+    "observed": {
+      "owners": [
+        "U",
+        "V"
+      ],
+      "settingOwner": "V"
+    }
+  },
+  {
+    "id": "F3 close business day races successful paid booking",
+    "observed": {
+      "paidOrderStatus": "active",
+      "dayClosed": true
+    }
+  },
+  {
+    "id": "F4 product deleted after checkout reserves stock",
+    "observed": {
+      "paidOrder": "active",
+      "productExists": false
+    }
+  },
+  {
+    "id": "F5 concurrent overlapping daily prices both accepted",
+    "observed": {
+      "bothAccepted": true,
+      "overlappingPrices": [
+        7000,
+        9000
+      ]
+    }
+  },
+  {
+    "id": "F6 new staff scanner not retried after privacy agreement",
+    "observed": {
+      "afterLoginAndScan": "fail",
+      "afterAgree": "fail",
+      "inviteUsed": false
+    }
+  },
+  {
+    "id": "F7 stale customer order response overwrites selected refund tab",
+    "observed": {
+      "selectedTab": "refund",
+      "shownOrder": "unpaid"
+    }
+  },
+  {
+    "id": "F8 cart cleanup deletes newly added quantity after older order pays",
+    "observed": {
+      "cartBefore": 3,
+      "paidQuantity": 1,
+      "expectedRemaining": 2,
+      "actualRemaining": 0
+    }
+  },
+  {
+    "id": "F9 nonoverlapping scheduled banners incorrectly hit concurrent limit",
+    "observed": {
+      "sameTimeMaximum": 1,
+      "sixthRejected": "已有 5 张横幅在显示，请先下架一张"
+    }
+  },
+  {
+    "id": "F10 concurrent first privacy agreements duplicate user identity",
+    "observed": {
+      "sameOpenidUsers": 2
+    }
+  }
+]
