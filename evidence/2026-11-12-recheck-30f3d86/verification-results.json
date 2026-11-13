@@ -1,0 +1,14 @@
+[
+  {
+    "test": "前端核銷回覆失敗後再按確認",
+    "passed": true,
+    "requests": 2,
+    "sameRequestId": true
+  },
+  {
+    "test": "整張券退款等待中重新打開詳情",
+    "passed": true,
+    "state": "退款中 1",
+    "status": "待使用 · 退款处理中"
+  }
+]
