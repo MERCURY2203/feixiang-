@@ -1,0 +1,36 @@
+[
+  {
+    "name": "J1 verify log failure commits coupon deduction despite failure response",
+    "observed": {
+      "firstResponse": {
+        "ok": false,
+        "code": "ERROR",
+        "message": "操作失败，请稍后再试"
+      },
+      "firstDeducted": 1,
+      "afterRetryDeducted": 2,
+      "logs": 1
+    }
+  },
+  {
+    "name": "J2 pending refund not visible on customer detail",
+    "observed": {
+      "processing": true,
+      "orderStatus": "待使用",
+      "itemState": "",
+      "refundHint": "",
+      "canRefund": false,
+      "hasCode": false
+    }
+  },
+  {
+    "name": "J3 finalization errors bypass retry scheduling and block next refund",
+    "observed": {
+      "timerRuns": 4,
+      "firstRefundState": "pending",
+      "firstNextRetryAt": null,
+      "firstProviderRefund": 100,
+      "lastProviderRefund": 0
+    }
+  }
+]
