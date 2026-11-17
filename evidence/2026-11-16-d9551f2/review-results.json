@@ -1,0 +1,31 @@
+[
+  {
+    "id": "G1 cancellation interrupted before marking refunds does not recover",
+    "observed": {
+      "cancelResult": false,
+      "gameStatus": "cancelled",
+      "paidOrder": "active",
+      "timerRuns": 4,
+      "refund": 0
+    }
+  },
+  {
+    "id": "G2 late refund promotes waiting customer after start and misses automatic refund",
+    "observed": {
+      "afterStart": true,
+      "previousState": "w",
+      "newState": "j",
+      "nofillDone": true,
+      "candidateRefund": 0
+    }
+  },
+  {
+    "id": "G3 game publish reads hours lock after stale configuration check",
+    "observed": {
+      "publishedGameId": "G261110100000631118",
+      "gameOpen": true,
+      "dayClosed": true,
+      "gameLockCount": 1
+    }
+  }
+]
