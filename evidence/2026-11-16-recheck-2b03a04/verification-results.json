@@ -1,0 +1,34 @@
+[
+  {
+    "id": "G1 fixed: cancellation mark failure recovered before end",
+    "observed": {
+      "fixed": true,
+      "refunded": 5000
+    }
+  },
+  {
+    "id": "G2 fixed: delayed refund does not promote after start",
+    "observed": {
+      "fixed": true,
+      "candidateRefund": 5000
+    }
+  },
+  {
+    "id": "G3 fixed: version change rejects stale publish",
+    "observed": {
+      "fixed": true,
+      "code": "TAKEN",
+      "message": "营业时间已调整，请刷新后重试"
+    }
+  },
+  {
+    "id": "P1 residual: failed cancel marking across end causes false completion",
+    "observed": {
+      "game": "cancelled",
+      "order": "completed",
+      "item": "used",
+      "refundPending": false,
+      "refunded": 0
+    }
+  }
+]
