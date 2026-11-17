@@ -1,0 +1,53 @@
+[
+  {
+    "id": "G1 fixed: cancellation mark failure recovered before end",
+    "observed": {
+      "fixed": true,
+      "refunded": 5000
+    }
+  },
+  {
+    "id": "G2 fixed: delayed refund does not promote after start",
+    "observed": {
+      "fixed": true,
+      "candidateRefund": 5000
+    }
+  },
+  {
+    "id": "G3 fixed: version change rejects stale publish",
+    "observed": {
+      "fixed": true,
+      "code": "TAKEN",
+      "message": "营业时间已调整，请刷新后重试"
+    }
+  },
+  {
+    "id": "G1-R fixed: cancel marking failure spans end, recovery refunds fully",
+    "observed": {
+      "fixed": true,
+      "order": "refunded",
+      "item": "refunded",
+      "refundPending": false,
+      "refunded": 5000
+    }
+  },
+  {
+    "id": "O4 migration: previously used cancelled card is reopened and refunded",
+    "observed": {
+      "fixed": true,
+      "refunded": 5000,
+      "repeatedMigrationExtraRefund": 0
+    }
+  },
+  {
+    "id": "O4 overlap: cancellation conflicts with finish and safely rejects after start",
+    "observed": {
+      "fixed": true,
+      "cancelAccepted": false,
+      "game": "open",
+      "finalOrder": "completed",
+      "item": "used",
+      "refunded": 0
+    }
+  }
+]
